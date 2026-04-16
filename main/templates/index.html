@@ -1,0 +1,542 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Portfolio</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{% static 'images/portfolio.png' %}">
+    </head>
+
+    <body>
+        <header class="navbar-wrapper">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'images/cssdeck.svg' %}" alt="logo">
+                        <span>Portfolio</span>
+                    </a>
+                </div>
+                <input type="checkbox" id="menu-toggle">
+                <div class="nav-right">
+                <a href="https://github.com/abhardwaj200321" class="github-btn" target="_blank" rel="noopener noreferrer">Github Profile</a>
+                <!-- ✅ HIDDEN CHECKBOX -->
+
+                <!-- ✅ HAMBURGER -->
+                <label for="menu-toggle" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                </div>
+                <!-- Navigation -->
+                <nav>
+                    <a href="#About">About</a>
+                    <a href="#Skills">Skills</a>
+                    <a href="#Experience">Experience</a>
+                    <a href="#Education">Education</a>
+                    <a href="#Contact">Contact</a>
+                </nav>
+            
+            </div>
+        </header>
+
+        <section class="hero" id="About">
+
+            <div class="left">
+                <h1>Hi, I am <br><span>Abhishek Bhardwaj</span></h1>
+                <h2>I am a <span class="typing"></span></h2>
+                
+                <p>
+                    I am a motivated and versatile individual, always eager to take on new challenges.
+                    With a passion for learning I am dedicated to delivering high-quality results.
+                    With a positive attitude and a growth mindset, I am ready to make a meaningful
+                    contribution and achieve great things.
+                </p>
+                
+                <a href="{% static 'files/Abhishek Bhardwaj Resume.pdf' %}" target="_blank" class="resume-btn">Check Resume</a>
+            </div>
+            
+            <div class="right">
+                <svg class="cinema-stars" viewBox="0 0 500 500">
+                    <defs>
+                        <!-- Glow -->
+                        <radialGradient id="starGlow">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="100%" stop-color="transparent"/>
+                        </radialGradient>
+
+                        <!-- Trail -->
+                        <linearGradient id="trailGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="transparent"/>
+                            <stop offset="100%" stop-color="#00c6ff"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- 🌌 BACKGROUND SMALL STARS -->
+                    <g class="bg-stars">
+                        <circle cx="50" cy="80" r="1"/>
+                        <circle cx="120" cy="200" r="1.5"/>
+                        <circle cx="300" cy="100" r="1"/>
+                        <circle cx="400" cy="300" r="1.2"/>
+                        <circle cx="200" cy="400" r="1"/>
+                        <circle cx="450" cy="150" r="1.3"/>
+                        <circle cx="80" cy="350" r="1"/>
+                        <circle cx="250" cy="250" r="1.5"/>
+                    </g>
+
+                    <!-- 🎯 CURVED PATHS -->
+                    <path id="c1" d="M0 400 Q250 100 500 50" fill="none"/>
+                    <path id="c2" d="M50 0 Q300 200 500 400" fill="none"/>
+                    <path id="c3" d="M0 250 Q250 350 500 250" fill="none"/>
+                    <path id="c4" d="M100 500 Q250 200 450 0" fill="none"/>
+                    <path id="c5" d="M0 100 Q200 300 500 200" fill="none"/>
+                    <path id="c6" d="M50 450 Q250 100 450 300" fill="none"/>
+                    <path id="c7" d="M0 300 Q300 200 500 400" fill="none"/>
+                    <path id="c8" d="M100 0 Q250 250 400 500" fill="none"/>
+
+                    <!-- 💎 FAR STARS (slow, small) -->
+                    <g opacity="0.5">
+                        <g>
+                            <line x1="-30" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="3" fill="#ffffff"/>
+                            <animateMotion dur="6s" repeatCount="indefinite">
+                                <mpath href="#c1"/>
+                            </animateMotion>
+                        </g>
+
+                        <g>
+                            <line x1="-30" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="3" fill="#00c6ff"/>
+                            <animateMotion dur="7s" begin="2s" repeatCount="indefinite">
+                                <mpath href="#c2"/>
+                            </animateMotion>
+                        </g>
+                    </g>
+
+                    <!--  NEAR STARS (fast, bigger) -->
+                    <g>
+                        <g>
+                            <line x1="-50" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="3"/>
+                            <circle r="5" fill="#ff6a00"/>
+                            <animateMotion dur="3s" repeatCount="indefinite">
+                                <mpath href="#c3"/>
+                            </animateMotion>
+                        </g>
+
+                        <g>
+                            <line x1="-50" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="3"/>
+                            <circle r="5" fill="#ee0979"/>
+                            <animateMotion dur="3.5s" begin="1s" repeatCount="indefinite">
+                                <mpath href="#c4"/>
+                            </animateMotion>
+                        </g>
+
+                        <g opacity="0.6">
+                            <line x1="-40" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="4" fill="#00c6ff"/>
+                            <animateMotion dur="4s" begin="0.5s" repeatCount="indefinite">
+                                <mpath href="#c5"/>
+                            </animateMotion>
+                        </g>
+
+                        <g opacity="0.6">
+                            <line x1="-40" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="4" fill="#ffffff"/>
+                            <animateMotion dur="5s" begin="1.5s" repeatCount="indefinite">
+                                <mpath href="#c6"/>
+                            </animateMotion>
+                        </g>
+
+                        <g>
+                            <line x1="-50" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="3"/>
+                            <circle r="5" fill="#ff6a00"/>
+                            <animateMotion dur="3.2s" begin="2s" repeatCount="indefinite">
+                                <mpath href="#c7"/>
+                            </animateMotion>
+                        </g>
+
+                        <g>
+                            <line x1="-50" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="3"/>
+                            <circle r="5" fill="#ee0979"/>
+                            <animateMotion dur="3.8s" begin="1s" repeatCount="indefinite">
+                                <mpath href="#c8"/>
+                            </animateMotion>
+                        </g>
+
+                        <g opacity="0.5">
+                            <line x1="-30" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="3" fill="#00ffcc"/>
+                            <animateMotion dur="6s" begin="2.5s" repeatCount="indefinite">
+                                <mpath href="#c1"/>
+                            </animateMotion>
+                        </g>
+
+                        <g opacity="0.5">
+                            <line x1="-30" y1="0" x2="10" y2="0" stroke="url(#trailGrad)" stroke-width="2"/>
+                            <circle r="3" fill="#ffffff"/>
+                            <animateMotion dur="7s" begin="3s" repeatCount="indefinite">
+                                <mpath href="#c2"/>
+                            </animateMotion>
+                        </g>
+                    </g>
+                </svg>
+
+                <div class="profile-circle">
+                    <img src="{% static 'images/profile.jpeg' %}" alt="profile">
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Section -->
+
+        <section class="skills-section" id="Skills">
+            <div class="contain">
+                <h1>Skills</h1>
+                <p class="subtitle">
+                    Here are some of my skills on which I have been working on for the past 1 years.
+                </p>
+
+                <div class="skills-container">
+                    <!-- Frontend -->
+                    <div class="skills-box">
+                        <h2>Frontend</h2>
+
+                        <div class="skills-list">
+                            <div class="skill">
+                                <img src="{% static 'images/react.png' %}">
+                                <span>React Js</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/redux.png' %}">
+                                <span>Redux</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/html.png' %}">
+                                <span>HTML</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/css.png' %}">
+                                <span>CSS</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/javascript.png' %}">
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skills-box">
+                        <h2>Backend</h2>
+
+                        <div class="skills-list">
+                            <div class="skill">
+                                <img src="{% static 'images/python.png' %}">
+                                <span>Python</span>
+                            </div>
+                            <div class="skill">
+                                <img src="{% static 'images/java.png' %}">
+                                <span>Java</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/django.png' %}">
+                                <span>Django</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/mysql.png' %}">
+                                <span>MySQL</span>
+                            </div>
+
+                            <div class="skill">
+                                <img src="{% static 'images/sqlite.png' %}">
+                                <span>SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Others -->
+                    <div class="skills-box">
+                        <h2>Others</h2>
+
+                        <div class="skills-list">
+                            <div class="skill">
+                                <img src="{% static 'images/github.png' %}">
+                                <span>Github</span>
+                            </div>
+                            <div class="skill">
+                                <img src="{% static 'images/vs-code.png' %}">
+                                <span>VS Code</span>
+                            </div>
+                            <div class="skill">
+                                <img src="{% static 'images/intellij.png' %}">
+                                <span>intellij IDEA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience" id="Experience">
+
+            <h1>Experience</h1>
+            <p class="subtitle">
+                My work experience as a software engineer and working on
+                different projects.
+            </p>
+
+            <div class="timeline">
+
+                <!-- ITEM 1 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <img src="{% static 'images/kodnestoffice_logo.jpg' %}" alt="">
+                            <div>
+                                <h3>Python Fullstack Developer</h3>
+                                <p>KODNEST Pvt. Ltd. -> Bengaluru</p>
+                                <span>Aug 2025 - Present</span>
+                            </div>
+                        </div>
+
+                        <p class="desc">
+                            I worked as a Python Full Stack Developer Intern at KodNest Pvt. Ltd., where
+                            I gained hands-on experience in developing dynamic web applications using 
+                            HTML, CSS, and JavaScript for the frontend, and Python with the Django framework for the backend.
+                            I was involved in designing and managing databases, performing CRUD operations,
+                            integrating frontend with backend, and working on real-time projects, which enhanced 
+                            my problem-solving, debugging, and teamwork skills.
+                        </p>
+
+                        <p class="skills">
+                            <b>Skills:-</b>   
+                        </p>
+                        <div class="ul-container">
+                            <ul>
+                                <li>Python</li>
+                                <li>Django</li>
+                                <li>HTML</li>
+                            </ul>
+                            <ul>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>SQL / Database Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <img src="{% static 'images/kodnest-logo.png' %}" alt="">
+                            <div>
+                                <h3>Python Fullstack developer</h3>
+                                <p>KODNEST Pvt. Ltd. -> Bengluru</p>
+                                <span>Aug 2025 - Present</span>
+                            </div>
+                        </div>
+
+                        <p class="desc">
+                            The Taxation Project for the Sri Lankan Government optimized
+                            tax-related processes. Utilizing MVC, JDBC, and JUnit,
+                            development time was reduced by 20%, while collaboration
+                            improved by 30%.
+                        </p>
+
+                        <p class="skills">
+                            <b>Skills:</b> ReactJS • Redux • SpringBoot • HTML • CSS • JavaScript
+                        </p>
+
+                        <ul>
+                            <li>MVC architecture</li>
+                            <li>JDBC & JUnit</li>
+                            <li>Git & Agile</li>
+                            <li>AWS & REST APIs</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div> -->
+        </section>
+
+        <!-- Education Section -->
+        <section class="experience" id="Education">
+
+            <h1>Education</h1>
+            <p class="subtitle">
+                My education has been a journey of self-discovery and growth. My educational details are as follows.
+            </p>
+
+            <div class="timeline timeline-right">
+                <!-- ITEM 1 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <img src="{% static 'images/Lnct-logo.jpg' %}" alt="">
+                            <div>
+                                <h3>Bachelor of Technology (BTech)</h3>
+                                <p>Laxmi Narain College of Technology & Science at Bhopal, MP</p>
+                                <span>Sep 2021 - May 2025</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-content">
+                            <p class="skills">
+                                <b>Grade:</b> 6.83 CGPA
+                            </p>
+                        </div>
+
+                        <p class="desc">
+                            I completed my Bachelor's in Computer Science Engineering
+                            from Laxmi Narain College of Technology & Science, Bhopal, achieving a CGPA of 6.83.
+                            Alongside core subjects, I studied data structures, algorithms,
+                            and full-stack development, which prepared me for a career in technology.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ITEM 2 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <img src="{% static 'images/H.G.jpg' %}" alt="">
+                            <div>
+                                <h3>H.G International School at Abu Road, RJ</h3>
+                                <p>12th CBSE</p>
+                                <span>May 2020 - June 2021</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-content">
+                            <p class="skills">
+                                <b>Grade:</b> 74.4 %
+                            </p>
+                        </div>
+
+                        <p class="desc">
+                            I completed my 12th Higher Secondary education (CBSE) from H.G. International School,
+                            Abu Road where I pursued the Science stream, building a strong foundation in subjects 
+                            like Physics, Chemistry, Mathematics and Computer Science.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ITEM 3 -->
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+                        <div class="card-header">
+                            <img src="{% static 'images/divine.webp' %}" alt="">
+                            <div>
+                                <h3>Divine International School at Ahmedabad, GJ</h3>
+                                <p>10th ICSE</p>
+                                <span>March 2018 - April 2019</span>
+                            </div>
+                        </div>
+
+                        <div class="skills-content">
+                            <p class="skills">
+                                <b>Grade:</b> 70 %
+                            </p>
+                        </div>
+
+                        <p class="desc">
+                            I completed my 10th Matriculation (ICSE) from Divine International School,
+                            Ahmedabad where I developed a strong overall academic foundation across core subjects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="Contact">
+            <h1>Contact</h1>
+            <p>Feel free to reach out to me for any questions or opportunities!</p>
+
+            <div class="contact-box">
+                <h2>Email Me 🚀</h2>
+
+                {% if success %}
+                    <p class="success">Message Sent Successfully!</p>
+                {% endif %}
+
+                {% if error %}
+                    <p style="color:red;">{{ error }}</p>
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="text" name="subject" placeholder="Subject" required>
+                    <textarea name="message" placeholder="Message" rows="4" required></textarea>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer">
+            <h2>Abhishek Bhardwaj</h2>
+    
+            <div class="footer-links">
+                <a href="#About">About</a>
+                <a href="#Skills">Skills</a>
+                <a href="#Experience">Experience</a>
+                <a href="#Education">Education</a>
+                <a href="#Contact">Contact</a>
+            </div>
+    
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/abhardwaj200321" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://web.whatsapp.com" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                </a>
+    
+                <a href="https://instagram.com/abhishek_bhardwaj2103" target="_blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://facebook.com/yourprofile" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://takeuforward.org/profile/abhardwaj200321" target="_blank">
+                <i class="fas fa-code tuf-icon"></i>
+                </a>
+            </div>
+    
+            <p>© 2026 Abhishek Bhardwaj. All rights reserved.</p>
+        </footer>
+    </body>
+
+</html>
